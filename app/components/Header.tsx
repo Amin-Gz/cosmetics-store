@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Header() {
@@ -23,11 +24,13 @@ export default function Header() {
           {/* leftSide------ */}
           <div className="w-[45%] h-[80px] bg-white flex flex-row ">
             {/* logo---------- */}
-            <img
-              src="/svg/logo.svg"
-              alt="Logo-icon"
-              className="w-[177px] h-[40px] ml-5 mt-4"
-            />
+            <Link href={"/"}>
+              <img
+                src="/svg/logo.svg"
+                alt="Logo-icon"
+                className="w-[177px] h-[40px] ml-5 mt-4"
+              />
+            </Link>
             {/* search-bar--- */}
             <div className="flex flex-row w-[239px] h-[40px] bg-[#EFEFEF] rounded-[8px] ml-[90px] mt-4">
               <button className="bg-[#F29AA7] w-[46px] h-[40px] flex items-center justify-center rounded-[8px]">
@@ -71,9 +74,9 @@ export default function Header() {
         </div>
         {/* navbar------- */}
         <div className="flex flex-row justify-between w-[90%] bg-white ">
-          <ul className="w-[80%] h-[67px]  flex flex-row items-center ">
+          <ul className="w-[80%] h-[67px]  flex flex-row items-center *:hover:cursor-pointer">
             <li onClick={mouse} className="flex flex-row items-center ml-5">
-              <p className="text-[30px] font-semibold">
+              <p className="text-[30px] font-semibold hover:cursor-pointer hover:text-[#F29AA7]">
                 products categorization
               </p>
               <img src="/svg/rightArrow-icon.svg" alt="arrow-icon" />
@@ -131,30 +134,35 @@ export default function Header() {
         onClick={mouse}
         className="w-full h-[250rem] backdrop-brightness-50 absolute z-10"
       >
-        <div className="w-[1211px] h-[673px] bg-white rounded-[40px] ml-24 flex flex-row items-center">
-          <ul className="h-[90%] w-[380px] ml-24 flex flex-col justify-evenly">
-            <li className="text-[40px] font-semibold hover:text-slate-700">
+        <div className="w-[1211px] h-[673px] bg-white rounded-[40px] flex flex-row items-center relative top-[212px] left-32">
+          <ul className="h-[90%] w-[380px] ml-24 flex flex-col justify-evenly *:hover:cursor-pointer ">
+            <li className="text-[40px] font-semibold hover:text-[#F29AA7]">
               Cosmetic
             </li>
-            <li className="text-[40px] font-semibold hover:text-slate-700">
+            <li className="text-[40px] font-semibold hover:text-[#F29AA7]">
               Skin products
             </li>
             <li className="text-[40px] font-semibold text-[#F29AA7]">
               Hair products
             </li>
-            <li className="text-[40px] font-semibold hover:text-slate-700">
+            <li className="text-[40px] font-semibold hover:text-[#F29AA7]">
               Bathroom products
             </li>
-            <li className="text-[40px] font-semibold hover:text-slate-700">
+            <li className="text-[40px] font-semibold hover:text-[#F29AA7]">
               health products
             </li>
-            <li className="text-[40px] font-semibold hover:text-slate-700">
+            <li className="text-[40px] font-semibold hover:text-[#F29AA7]">
               Appliances
             </li>
           </ul>
           <hr className="bg-black w-[3px] h-[521px]" />
           <div className="h-[70%] ">
-            <p className="text-[40px] font-semibold ml-14">Cream</p>
+            <Link
+              href={"/products/skinCare"}
+              className="text-[40px] font-semibold ml-14 cursor-pointer"
+            >
+              Cream
+            </Link>
           </div>
         </div>
       </div>
